@@ -1,0 +1,26 @@
+DATA:
+  LOCAL_SLIDE_DIR: '/share/gastric_slides'
+  DATA_SAVE_DIR: './data'
+  LABEL_ID: 1 # 1 for subtype task, 2 for binary task
+  TEST_RATIO: 0.3
+  FOLD_NUM: 5
+IMAGE:
+  LEVEL: 1
+  MASK_LEVEL: 3
+  PATCH_SIZE: 224
+  LOCAL_TILE_SIZE: 512
+SAMPLE:
+  POS_RAT: 0.5
+  NEG_RAT: 0.05
+  INTENSITY_THRED: 25
+  STEP: 56
+  MAX_PER_CLASS: 200
+  SAVE_MASK: false # reserved config for FCN segmentation
+CNN:
+  ARCH: 'efficientnet-b0'
+  PRETRAINED: false
+FEATURE:
+  STEP: 112
+DPATH:
+  GRAPH_MAX_NODES: 300
+  MAX_PER_PATH: 64
