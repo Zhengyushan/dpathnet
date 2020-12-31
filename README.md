@@ -18,8 +18,8 @@ It also includes the implementation of the paper [DPathNet](https://doi.org/10.1
 	title     = {Tracing Diagnosis Paths on Histopathology WSIs for Diagnostically Relevant Case Recommendation},
 	booktitle = {Medical Image Computing and Computer-Assisted Intervention},
 	year      = {2020},
-    pages     = {459--469},
-    doi       = {10.1007/978-3-030-59722-1_44},
+        pages     = {459--469},
+        doi       = {10.1007/978-3-030-59722-1_44},
 }
 
 ```
