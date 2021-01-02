@@ -319,7 +319,7 @@ def main_worker(gpu, ngpus_per_node, args):
         if test_loader is not None:
             test_label, test_code = hash_encoding(valid_loader, model)
             tmet = evaluate(test_code, test_label, db_code,
-                            db_labelodel, 'Test')
+                            db_label, 'Test')
 
         if valid_loader is not None and test_loader is not None:
             with open(args.model_dir + 'results.csv', 'a') as f:
@@ -392,7 +392,7 @@ def train(train_loader, model, optimizer, args):
         '''
         loss = triplet_loss(hash_code, label,
                             margin=args.hash_bits >> 1
-                            ) + 100 * F.mse_loss(label, torch.sigmoid(cls_predict))
+                            ) + F.mse_loss(label, torch.sigmoid(cls_predict))
 
         # backward
         loss.backward()

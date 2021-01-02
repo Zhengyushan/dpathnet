@@ -43,8 +43,8 @@ DATADIR = [the directory of the data list generated in the preprocessing step.]
 for((FOLD=0;FOLD<5;FOLD++)); 
 do
     python main.py --dataset-dir $DATADIR/list_fold_$FOLD --prefix-name DRA-Net\
-        --hash-bits 40 --rnn-model GRU --num-rnn-layers 1\
-        --num-epochs 300 --batch-size 32 --num-workers 4\
+        --hash-bits 32 --rnn-model GRU --num-rnn-layers 1\
+        --num-epochs 300 --batch-size 32 --num-workers 8\
         --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0
 done
 ```
@@ -56,8 +56,8 @@ DATADIR = [the directory of the data list generated in the preprocessing step.]
 for((FOLD=0;FOLD<5;FOLD++)); 
 do
     python main.py --dataset-dir $DATADIR/list_fold_$FOLD --prefix-name DPathNet\
-        --hash-bits 40 --rnn-model GRU --num-rnn-layers 1\
-        --disable-att --num-epochs 300 --batch-size 32 --num-workers 4\
+        --hash-bits 32 --rnn-model GRU --num-rnn-layers 1\
+        --disable-att --num-epochs 300 --batch-size 32 --num-workers 8\
         --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0
 done
 ```
