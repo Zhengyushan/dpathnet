@@ -345,8 +345,8 @@ def main_worker(gpu, ngpus_per_node, args):
             )
         else:
             train_sampler = None
-            val_sampler = None
-            test_sampler = None
+        val_sampler = None
+        test_sampler = None
 
     if test_set is not None:
         test_loader = torch.utils.data.DataLoader(
