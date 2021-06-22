@@ -76,7 +76,7 @@ def merge_config_to_args(args, cfg):
 
 def get_sampling_path(args):
     prefix = '[l{}t{}s{}m{}][p{}n{}i{}]'.format(args.level, args.imsize,
-                                              args.step, args.max_per_class,
+                                              args.sample_step, args.max_per_class,
                                               int(args.positive_ratio * 100),
                                               int(args.negative_ratio * 100),
                                               args.intensity_thred)
