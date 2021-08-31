@@ -260,7 +260,7 @@ def main_worker(gpu, ngpus_per_node, args):
             screen_list = pickle.load(f)
         path_len = len(screen_list)
 
-        for roi_idx, sd in enumerate(screen_list):  # sd = (x1, x2, y1, y2)
+        for roi_idx, sd in enumerate(screen_list):  # sd = (left, right, top, bottom)
             screen_rank_mat = np.zeros_like(mask)
             screen_rank_mat[sd[2]:sd[3], sd[0]:sd[1]] = 1
             screen_rank_mat = screen_rank_mat[(

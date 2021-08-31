@@ -61,3 +61,32 @@ do
         --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0
 done
 ```
+
+### Data description
+The structure of the whole slide image dataset to run the code.
+```
+./data                                    # The directory of the data.
+├─ 0A00DD22-A08E-4B47-A51B-94A8BD039DAA   # The directory for a slide, which is named by GUID in our dataset.
+│  ├─ Large                               # The directory of image tiles in Level 0 (40X lens).
+│  │  ├─ 0000_0000.jpg                    # The image tile in Row 0 and Column 0.
+│  │  ├─ 0000_0001.jpg                    # The image tile in Row 0 and Column 1.
+│  │  └─ ...
+│  ├─ Medium                              # The directory of image tiles in Level 1 (20X lens).
+│  │  ├─ 0000_0000.jpg
+│  │  ├─ 0000_0001.jpg
+│  │  └─ ...
+│  ├─ Small                               # The directory of image tiles in Level 2 (10X lens).
+│  │  ├─ 0000_0000.jpg
+│  │  ├─ 0000_0001.jpg
+│  │  └─ ...
+│  ├─ Overview                            # The directory of image tiles in Level 3 (5X lens).
+│  │  ├─ 0000_0000.jpg
+│  │  ├─ 0000_0001.jpg
+│  │  └─ ...
+│  ├─ Overview.jpg                        # The thumbnail of the WSI in Level 3.          
+│  ├─ AnnotationMask.png                  # The pixel-wise annotation mask of the WSI in Level 3.
+│  └─ BrowsingRecord.pkl                  # The file to store the sequence of browing screens by 
+│                                           coordinates ((left, right, top, bottom),...) in Level 3.
+├─ 0A003711-3BE4-44E2-9280-89D84E5AF59F
+└─ ...
+```
